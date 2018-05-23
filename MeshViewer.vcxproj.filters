@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="InitShader.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="MeshViewApp.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="MeshLoader.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="MemoryMapped.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Angel\Angel.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Materials.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="MeshViewApp.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="MeshLoader.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="MemoryMapped.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="fshader.glsl">
+      <Filter>Source\GLSL</Filter>
+    </None>
+    <None Include="vshader.glsl">
+      <Filter>Source\GLSL</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source">
+      <UniqueIdentifier>{19a87e1f-9d14-4887-84d8-905a8d9c5713}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header">
+      <UniqueIdentifier>{0643c781-e5ab-4a64-aa80-f45481b2e563}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\GLSL">
+      <UniqueIdentifier>{8e3f07d3-0f93-4fe1-aedd-bf48bd863872}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
