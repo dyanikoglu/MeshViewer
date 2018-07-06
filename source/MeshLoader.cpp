@@ -24,13 +24,14 @@ GLint MeshLoader::metaData(string path) {
 	GLint lineNum = 0;
 	for (GLint i = 0; i < data.size(); i++) {
 		// Build current line
-		if (buffer[i] != '\n') {
+		if (buffer[i] != '\n' && buffer[i] != '\r') {
 			tempLine.push_back(buffer[i]);
 		}
 		// Parse current line
 		else {
 			if (lineNum == 0) {
 				if (tempLine.compare("OFF") == 0) {
+          i++;
 					lineNum++;
 					tempLine.clear();
 				}
@@ -73,7 +74,7 @@ bool MeshLoader::loadMesh(string path) {
 	GLint lineNum = 0;
 	for (GLint i = 0; i < data.size(); i++) {
 		// Build current line
-		if (buffer[i] != '\n') {
+		if (buffer[i] != '\n' && buffer[i] != '\r') {
 			tempLine.push_back(buffer[i]);
 		}
 		// Parse current line
@@ -81,6 +82,7 @@ bool MeshLoader::loadMesh(string path) {
 			// OFF Prefix
 			if (lineNum == 0) {
 				if (tempLine.compare("OFF") == 0) {
+          i++;
 					lineNum++;
 				}
 				else {
@@ -94,6 +96,7 @@ bool MeshLoader::loadMesh(string path) {
 				GLint secondSpace = tempLine.find(' ', firstSpace+1);
 				vertexCount = stoi(tempLine.substr(0, firstSpace));
 				faceCount = stoi(tempLine.substr(firstSpace + 1, secondSpace));
+        i++;
 				lineNum++;
 			}
 			// Vertices
@@ -126,6 +129,7 @@ bool MeshLoader::loadMesh(string path) {
 				// Check end
 
 				tempVertices.emplace_back(vec4(x, y, z, 1.f));
+        i++;
 				lineNum++;
 			}
 			// Faces
@@ -149,6 +153,7 @@ bool MeshLoader::loadMesh(string path) {
 					this->normals.emplace_back(vec4(normal,0.0));
 				}
 
+        i++;
 				lineNum++;
 			}
 
