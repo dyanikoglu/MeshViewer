@@ -1,5 +1,9 @@
 # Mesh Viewer
 
+![Project Screenshot](https://image.ibb.co/cuWYRd/Screenshot.png)
+
+A 3d mesh viewer for models with .off extension, developed with OpenGL on C++.
+
 ## Environment Setup
 
 - Solution is created with Visual Studio 2017.
@@ -8,8 +12,13 @@
 
 - Project must be compiled on x86 mode. (Release mode is preferred for performance)
 
-- source folder glsl files inside should be on same directory with exe file.
+- Source folder with shader files inside should be on same directory with exe file.
 
+## Running The Program
+
+Run the command on cmd:
+
+`MeshViewer.exe seashell.off dragon.off`
 
 ## Information
 
@@ -36,11 +45,11 @@
 
 - Right Arrow -> Rotate object by 2 degrees
 
-- x -> Move mesh on x axis
+- x -> Move mesh on x axis (Press capsclock for change direction of movement)
 
-- y -> Move mesh on y axis
+- y -> Move mesh on y axis (Press capsclock for change direction of movement)
 
-- z -> Move mesh on z axis
+- z -> Move mesh on z axis (Press capsclock for change direction of movement)
 
 - f -> Face drawing mode
 
