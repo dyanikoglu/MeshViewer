@@ -1,15 +1,18 @@
 # Mesh Viewer
 
-Environment Setup
---------------------
-- Just launch project by opening "MeshViewer.vcxproj". Project should be builded on x86 - Release mode. (It's important
-that project should be launched on "Release", code should be optimized for getting optimal performance)
+## Environment Setup
 
-- vshader.glsl and fshader.glsl from the project should be in same path with .exe file
+- Solution is created with Visual Studio 2017.
+
+- It's assumed that OpenGL, FreeGLUT and Windows SDK 8.1 is already installed correctly on the system. This guide can be followed to get your dev. environment ready: http://www.cs.uky.edu/~cheng/cs633/OpenGLInstallGuideWindows.pdf
+
+- Project must be compiled on x86 mode. (Release mode is preferred for performance)
+
+- source folder glsl files inside should be on same directory with exe file.
 
 
-Information
----------------
+## Information
+
 - GL_CULL_FACE is enabled for improving performance
 
 - There is only one global light source and it's fixed on the scene.
@@ -20,9 +23,11 @@ Information
 
 - .off files should be in same path with builded .exe file
 
+- .off files should have LF line ending (\n). Loading Windows CR LF files will give error (\r\n).
 
-Controls
-------------
+
+## Controls
+
 - n -> Load next model
 
 - p -> Load previous model
@@ -46,11 +51,3 @@ Controls
 - Vertical Mouse Movement -> Rotate camera on y axis
 
 - Mouse Wheel -> Zoom in/zoom out the camera
-
-
-
-Bugs & Known Issues
------------------------
-- A group of triangles in stanford bunny is not visible while GL_CULL_FACE is enabled. Probably, they're given in clockwise order in .off file.
-
-- Due to example off files are in linux file ending style, .off files should have LF line ending (\n). Loading Windows CR LF files will give error (\r\n).

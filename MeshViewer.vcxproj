@@ -10,12 +10,30 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\Camera.cpp" />
+    <ClCompile Include="source\Main.cpp" />
+    <ClCompile Include="source\MemoryMapped.cpp" />
+    <ClCompile Include="source\MeshLoader.cpp" />
+    <ClCompile Include="source\MeshViewApp.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="source\fshader.glsl" />
+    <None Include="source\vshader.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\Camera.h" />
+    <ClInclude Include="include\Materials.h" />
+    <ClInclude Include="include\MemoryMapped.h" />
+    <ClInclude Include="include\MeshLoader.h" />
+    <ClInclude Include="include\MeshViewApp.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{C9638DD7-D105-4B29-B3B3-B0FF1130DD25}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>MeshViewer</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
     <ProjectName>MeshViewer</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -73,7 +91,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(IncludePath)</IncludePath>
+    <IncludePath>include;$(IncludePath)</IncludePath>
     <LibraryPath>$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -115,14 +133,13 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Program Files %28x86%29\Windows Kits\10\Include\10.0.15063.0\um\gl;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalLibraryDirectories>C:\Program Files %28x86%29\Windows Kits\10\Lib\10.0.15063.0\um\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>freeglut.lib;glu32.lib;opengl32.lib;glew32.lib;glew32s.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -142,26 +159,6 @@
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="Camera.cpp" />
-    <ClCompile Include="InitShader.cpp" />
-    <ClCompile Include="Main.cpp" />
-    <ClCompile Include="MemoryMapped.cpp" />
-    <ClCompile Include="MeshLoader.cpp" />
-    <ClCompile Include="MeshViewApp.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="fshader.glsl" />
-    <None Include="vshader.glsl" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Angel\Angel.h" />
-    <ClInclude Include="Camera.h" />
-    <ClInclude Include="Materials.h" />
-    <ClInclude Include="MemoryMapped.h" />
-    <ClInclude Include="MeshLoader.h" />
-    <ClInclude Include="MeshViewApp.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
