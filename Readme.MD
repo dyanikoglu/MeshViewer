@@ -22,7 +22,7 @@ Run the command on cmd:
 
 ## Information
 
-- GL_CULL_FACE is enabled for improving performance
+- GL_CULL_FACE is enabled for improving performance (Can be disabled from source code, if your models does not generated with taking face culling into account, and if it has missing faces when program is executed)
 
 - There is only one global light source and it's fixed on the scene.
 
