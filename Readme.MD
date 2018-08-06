@@ -32,9 +32,6 @@ Run the command on cmd:
 
 - .off files should be in same path with builded .exe file
 
-- .off files should have LF line ending (\n). Loading Windows CR LF files will give error (\r\n).
-
-
 ## Controls
 
 - n -> Load next model
